@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Mentari Mod",
+  "version": "0.1",
+  "description": "Auto pretest/forum/postest/kuesioner Mentari",
+  "icons": { "16": "icon16.png", "48": "icon48.png", "128": "icon128.png" },
+  "host_permissions": ["https://mentari.unpam.ac.id/*", "http://localhost/*", "http://127.0.0.1/*"],
+  "permissions": ["storage"],
+  "background": { "service_worker": "background.js" },
+  "content_scripts": [
+    {
+      "matches": ["https://mentari.unpam.ac.id/u-courses/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
